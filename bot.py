@@ -10,7 +10,6 @@ token = os.getenv('token')
 @client.event
 async def on_ready():
     print('We have logged in as {0.user}'.format(client))
-    await message.channel.send('Working!')
 
 @client.event
 async def on_message(message):
