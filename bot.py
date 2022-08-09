@@ -19,6 +19,6 @@ async def on_message(message):
     if message.content.startswith('$ping'):
         await message.channel.send('Pong!')
     if message.content.startswith('$banana'):
-        await message.channel.send(new Discord.Attachment('./public/img/banana.jpg') )
+        await message.channel.send(file=discord.File('./public/img/banana.jpg'))
 
 client.run(token)
