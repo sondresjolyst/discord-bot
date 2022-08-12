@@ -1,5 +1,6 @@
 import os
 import discord
+import random
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -19,6 +20,8 @@ async def on_message(message):
     if message.content.startswith('$ping'):
         await message.channel.send('Pong!')
     if message.content.startswith('$banana'):
-        await message.channel.send(file=discord.File('./public/img/banana.jpg'))
+        cwd = os.getcwd()
+        randomBanana = random.choice(os.listdir(cwd + "/public/img/bananaCollection"))
+        await message.channel.send(file=discord.File('./public/img/bananaCollection/' + randomBanana))
 
 client.run(token)
