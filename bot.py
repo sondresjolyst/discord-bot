@@ -33,5 +33,9 @@ async def on_message(message):
         randomTomato = random.choice(os.listdir(cwd + "/public/img/tomatoCollection"))
         await message.channel.send(file=discord.File('./public/img/tomatoCollection/' + randomTomato))
 
+    if message.content.startswith('$tractor'):
+        randomTractor = random.choice(os.listdir(cwd + "/public/img/tractorCollection"))
+        await message.channel.send(file=discord.File('./public/img/tractorCollection/' + randomTractor))
+
 
 client.run(token)
