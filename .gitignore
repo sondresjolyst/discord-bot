@@ -1,2 +1,4 @@
 .env
-public/img/bananaCollection
+public/img/*
+public/media/*
+cogs/__pycache__

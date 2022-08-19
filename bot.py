@@ -1,41 +1,23 @@
-import os
 import discord
-import random
+import os
+from discord.ext import commands
 from dotenv import load_dotenv
 
 load_dotenv()
-
-client = discord.Client()
 token = os.getenv('token')
-cwd = os.getcwd()
 
-@client.event
+bot = commands.Bot(command_prefix='$')
+
+@bot.event
 async def on_ready():
-    print('We have logged in as {0.user}'.format(client))
+    print('We have logged in as {0.user}'.format(bot))
+    await bot.change_presence(status=discord.Status.idle, activity=discord.Activity(type=discord.ActivityType.listening, name="Skjævelandsbrunå", url="https://www.google.com"))
 
-@client.event
-async def on_message(message):
-    if message.author == client.user:
-        return
+for filename in os.listdir('./cogs'):
+  if filename.endswith('.py'):
+    bot.load_extension(f'cogs.{filename[:-3]}')
+    
+  else:
+    print(f'Unable to load {filename[:-3]}')
 
-    if message.content.startswith('$ping'):
-        await message.channel.send('Pong!')
-
-    if message.content.startswith('$banana'):
-        randomBanana = random.choice(os.listdir(cwd + "/public/img/bananaCollection"))
-        await message.channel.send(file=discord.File('./public/img/bananaCollection/' + randomBanana))
-
-    if message.content.startswith('$apple'):
-        randomApple = random.choice(os.listdir(cwd + "/public/img/appleCollection"))
-        await message.channel.send(file=discord.File('./public/img/appleCollection/' + randomApple))
-
-    if message.content.startswith('$tomato'):
-        randomTomato = random.choice(os.listdir(cwd + "/public/img/tomatoCollection"))
-        await message.channel.send(file=discord.File('./public/img/tomatoCollection/' + randomTomato))
-
-    if message.content.startswith('$tractor'):
-        randomTractor = random.choice(os.listdir(cwd + "/public/img/tractorCollection"))
-        await message.channel.send(file=discord.File('./public/img/tractorCollection/' + randomTractor))
-
-
-client.run(token)
+bot.run(token)
