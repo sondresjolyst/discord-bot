@@ -90,5 +90,13 @@ class RandomPhoto(commands.Cog):
         except:
             await ctx.channel.send('There was an error!')
 
+    @commands.command()
+    async def cat(self, ctx):
+        try:
+            path = f"{publicImgPath}catCollection/"
+            await self.sendFile(path, ctx)
+        except:
+            await ctx.channel.send('There was an error!')
+
 def setup(client):
     client.add_cog(RandomPhoto(client))
