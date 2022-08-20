@@ -1,12 +1,12 @@
-import discord
 import os
+import discord
 from discord.ext import commands
 from dotenv import load_dotenv
 
 load_dotenv()
 token = os.getenv('token')
 
-bot = commands.Bot(command_prefix='$')
+bot = commands.Bot(command_prefix='$', help_command=None)
 
 @bot.event
 async def on_ready():
@@ -16,7 +16,7 @@ async def on_ready():
 for filename in os.listdir('./cogs'):
   if filename.endswith('.py'):
     bot.load_extension(f'cogs.{filename[:-3]}')
-    
+
   else:
     print(f'Unable to load {filename[:-3]}')
 

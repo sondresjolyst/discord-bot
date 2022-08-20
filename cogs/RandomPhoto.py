@@ -33,6 +33,26 @@ class RandomPhoto(commands.Cog):
         await self.sendFile(path, ctx)
 
     @commands.command()
+    async def mushroom(self, ctx):
+        path = f"{publicImgPath}mushroomCollection/"
+        await self.sendFile(path, ctx)
+
+    @commands.command()
+    async def grape(self, ctx):
+        path = f"{publicImgPath}grapeCollection/"
+        await self.sendFile(path, ctx)
+
+    @commands.command()
+    async def wood(self, ctx):
+        path = f"{publicImgPath}woodCollection/"
+        await self.sendFile(path, ctx)
+
+    @commands.command()
+    async def car(self, ctx):
+        path = f"{publicImgPath}carCollection/"
+        await self.sendFile(path, ctx)
+
+    @commands.command()
     async def tractor(self, ctx):
         path = f"{publicImgPath}tractorCollection/"
         await self.sendFile(path, ctx)
