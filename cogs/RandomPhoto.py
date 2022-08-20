@@ -19,43 +19,68 @@ class RandomPhoto(commands.Cog):
 
     @commands.command()
     async def banana(self, ctx):
-        path = f"{publicImgPath}bananaCollection/"
-        await self.sendFile(path, ctx)
+        try:
+            path = f"{publicImgPath}bananaCollection/"
+            await self.sendFile(path, ctx)
+        except:
+            await ctx.channel.send('There was an error!')
+        
 
     @commands.command()
     async def apple(self, ctx):
-        path = f"{publicImgPath}appleCollection/"
-        await self.sendFile(path, ctx)
+        try:
+            path = f"{publicImgPath}appleCollection/"
+            await self.sendFile(path, ctx)
+        except:
+            await ctx.channel.send('There was an error!')
 
     @commands.command()
     async def tomato(self, ctx):
-        path = f"{publicImgPath}tomatoCollection/"
-        await self.sendFile(path, ctx)
+        try:
+            path = f"{publicImgPath}tomatoCollection/"
+            await self.sendFile(path, ctx)
+        except:
+            await ctx.channel.send('There was an error!')
 
     @commands.command()
     async def mushroom(self, ctx):
-        path = f"{publicImgPath}mushroomCollection/"
-        await self.sendFile(path, ctx)
+        try:
+            path = f"{publicImgPath}mushroomCollection/"
+            await self.sendFile(path, ctx)
+        except:
+            await ctx.channel.send('There was an error!')
 
     @commands.command()
     async def grape(self, ctx):
-        path = f"{publicImgPath}grapeCollection/"
-        await self.sendFile(path, ctx)
+        try:
+            path = f"{publicImgPath}grapeCollection/"
+            await self.sendFile(path, ctx)
+        except:
+            await ctx.channel.send('There was an error!')
 
     @commands.command()
     async def wood(self, ctx):
-        path = f"{publicImgPath}woodCollection/"
-        await self.sendFile(path, ctx)
+        try:
+            path = f"{publicImgPath}woodCollection/"
+            await self.sendFile(path, ctx)
+        except:
+            await ctx.channel.send('There was an error!')
 
     @commands.command()
     async def car(self, ctx):
-        path = f"{publicImgPath}carCollection/"
-        await self.sendFile(path, ctx)
+        try:
+            path = f"{publicImgPath}carCollection/"
+            await self.sendFile(path, ctx)
+        except:
+            await ctx.channel.send('There was an error!')
 
     @commands.command()
     async def tractor(self, ctx):
-        path = f"{publicImgPath}tractorCollection/"
-        await self.sendFile(path, ctx)
+        try:
+            path = f"{publicImgPath}tractorCollection/"
+            await self.sendFile(path, ctx)
+        except:
+            await ctx.channel.send('There was an error!')
 
 def setup(client):
     client.add_cog(RandomPhoto(client))
