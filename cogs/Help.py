@@ -19,7 +19,7 @@ class Help(commands.Cog):
     def __init__(self, client):
         self.client = client
 
-    @commands.command(help="Shows all modules of that bot")
+    @commands.command(help="Shows all modules")
     async def help(self, ctx, *input):
 	
         prefix = self.client.command_prefix
@@ -49,8 +49,7 @@ class Help(commands.Cog):
         elif len(input) == 1:
             for cog in self.client.cogs:
                 if cog.lower() == input[0].lower():
-                    emb = discord.Embed(title=f'{cog} - Commands', description=self.client.cogs[cog].__doc__,
-                                        color=discord.Color.green())
+                    emb = discord.Embed(title=f'{cog} - Commands', color=discord.Color.green())
 
                     for command in self.client.get_cog(cog).get_commands():
                         if not command.hidden:

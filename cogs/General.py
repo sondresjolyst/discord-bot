@@ -2,6 +2,8 @@ from discord.ext import commands
 from discord.errors import Forbidden
 
 class General(commands.Cog):
+    """General commands"""
+
     def __init__(self, client):
         self.client = client
 
@@ -16,7 +18,7 @@ class General(commands.Cog):
     #         if any(word in msg_content for word in curseWord):
     #             await message.delete()
 
-    @commands.command()
+    @commands.command(help="Will return Pong!")
     async def ping(self, ctx):
         await ctx.channel.send('Pong!')
 
