@@ -53,5 +53,11 @@ class Media(commands.Cog):
         path = f"{publicImgPath}{name}.mp4"
         await self.sendFile(path, ctx)
 
+    @commands.command()
+    async def moped(self, ctx):
+        name = "moped"
+        path = f"{publicImgPath}{name}.mp4"
+        await self.sendFile(path, ctx)
+
 def setup(client):
     client.add_cog(Media(client))
