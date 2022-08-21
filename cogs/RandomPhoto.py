@@ -24,7 +24,6 @@ class RandomPhoto(commands.Cog):
             await self.sendFile(path, ctx)
         except:
             await ctx.channel.send('There was an error!')
-        
 
     @commands.command()
     async def apple(self, ctx):
