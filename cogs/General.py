@@ -30,7 +30,11 @@ class General(commands.Cog):
 
     @commands.command(help="Will return Pong!")
     async def ping(self, ctx):
-        await ctx.channel.send('Pong!')
+        try:
+            await ctx.channel.send('Pong!')
+        except Exception as err:
+            print(err)
+            await ctx.channel.send('There was an error!')
 
 async def setup(client):
     await client.add_cog(General(client))

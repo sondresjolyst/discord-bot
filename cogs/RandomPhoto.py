@@ -23,7 +23,8 @@ class RandomPhoto(commands.Cog):
         try:
             path = f"{publicImgPath}bananaCollection/"
             await self.sendFile(path, ctx)
-        except:
+        except Exception as err:
+            print(err)
             await ctx.channel.send('There was an error!')
 
     @commands.command(help="Random apple")
@@ -31,7 +32,8 @@ class RandomPhoto(commands.Cog):
         try:
             path = f"{publicImgPath}appleCollection/"
             await self.sendFile(path, ctx)
-        except:
+        except Exception as err:
+            print(err)
             await ctx.channel.send('There was an error!')
 
     @commands.command(help="Random tomato")
@@ -39,7 +41,8 @@ class RandomPhoto(commands.Cog):
         try:
             path = f"{publicImgPath}tomatoCollection/"
             await self.sendFile(path, ctx)
-        except:
+        except Exception as err:
+            print(err)
             await ctx.channel.send('There was an error!')
 
     @commands.command(help="Random mushroom")
@@ -47,7 +50,8 @@ class RandomPhoto(commands.Cog):
         try:
             path = f"{publicImgPath}mushroomCollection/"
             await self.sendFile(path, ctx)
-        except:
+        except Exception as err:
+            print(err)
             await ctx.channel.send('There was an error!')
 
     @commands.command(help="Random grape")
@@ -55,7 +59,8 @@ class RandomPhoto(commands.Cog):
         try:
             path = f"{publicImgPath}grapeCollection/"
             await self.sendFile(path, ctx)
-        except:
+        except Exception as err:
+            print(err)
             await ctx.channel.send('There was an error!')
 
     @commands.command(help="Random wood")
@@ -63,7 +68,8 @@ class RandomPhoto(commands.Cog):
         try:
             path = f"{publicImgPath}woodCollection/"
             await self.sendFile(path, ctx)
-        except:
+        except Exception as err:
+            print(err)
             await ctx.channel.send('There was an error!')
 
     @commands.command(help="Random car")
@@ -71,7 +77,8 @@ class RandomPhoto(commands.Cog):
         try:
             path = f"{publicImgPath}carCollection/"
             await self.sendFile(path, ctx)
-        except:
+        except Exception as err:
+            print(err)
             await ctx.channel.send('There was an error!')
 
     @commands.command(help="Random tractor")
@@ -79,7 +86,8 @@ class RandomPhoto(commands.Cog):
         try:
             path = f"{publicImgPath}tractorCollection/"
             await self.sendFile(path, ctx)
-        except:
+        except Exception as err:
+            print(err)
             await ctx.channel.send('There was an error!')
     
     @commands.command(help="Random stone")
@@ -87,7 +95,8 @@ class RandomPhoto(commands.Cog):
         try:
             path = f"{publicImgPath}stoneCollection/"
             await self.sendFile(path, ctx)
-        except:
+        except Exception as err:
+            print(err)
             await ctx.channel.send('There was an error!')
 
     @commands.command(help="Random cat")
@@ -95,7 +104,8 @@ class RandomPhoto(commands.Cog):
         try:
             path = f"{publicImgPath}catCollection/"
             await self.sendFile(path, ctx)
-        except:
+        except Exception as err:
+            print(err)
             await ctx.channel.send('There was an error!')
 
 async def setup(client):

@@ -11,8 +11,8 @@ bot = commands.Bot(command_prefix='$', help_command=None, intents=discord.Intent
 
 @bot.event
 async def on_ready():
-    print('We have logged in as {0.user}'.format(bot))
-    await bot.change_presence(status=discord.Status.idle, activity=discord.Activity(type=discord.ActivityType.listening, name="Skjævelandsbrunå", url="https://www.google.com"))
+    print(f'We have logged in as {bot.user}')
+    await bot.change_presence(status=discord.Status.idle, activity=discord.Activity(type=discord.ActivityType.listening, name="Skjævelandsbrunå"))
 
 async def load_extensions():
     for filename in os.listdir('./cogs'):

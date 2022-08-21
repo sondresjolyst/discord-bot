@@ -20,51 +20,83 @@ class Media(commands.Cog):
 
     @commands.command(help="Clip from Jæren rundt")
     async def edna(self, ctx):
-        name = "edna"
-        path = f"{publicImgPath}{name}.mp4"
-        await self.sendFile(path, ctx)
+        try:
+            name = "edna"
+            path = f"{publicImgPath}{name}.mp4"
+            await self.sendFile(path, ctx)
+        except Exception as err:
+            print(err)
+            await ctx.channel.send('There was an error!')
 
     @commands.command(help="Clip from Jæren rundt")
     async def elfin(self, ctx):
-        name = "elfin"
-        path = f"{publicImgPath}{name}.mp4"
-        await self.sendFile(path, ctx)
+        try:
+            name = "elfin"
+            path = f"{publicImgPath}{name}.mp4"
+            await self.sendFile(path, ctx)
+        except Exception as err:
+            print(err)
+            await ctx.channel.send('There was an error!')
 
     @commands.command(help="Clip from Jæren rundt")
     async def jarle(self, ctx):
-        name = "jarle"
-        path = f"{publicImgPath}{name}.mp4"
-        await self.sendFile(path, ctx)
+        try:
+            name = "jarle"
+            path = f"{publicImgPath}{name}.mp4"
+            await self.sendFile(path, ctx)
+        except Exception as err:
+            print(err)
+            await ctx.channel.send('There was an error!')
 
     @commands.command(help="Clip from Jæren rundt")
     async def john(self, ctx):
-        name = "john"
-        path = f"{publicImgPath}{name}.mp4"
-        await self.sendFile(path, ctx)
+        try:
+            name = "john"
+            path = f"{publicImgPath}{name}.mp4"
+            await self.sendFile(path, ctx)
+        except Exception as err:
+            print(err)
+            await ctx.channel.send('There was an error!')
 
     @commands.command(help="Clip from Jæren rundt")
     async def sveinung(self, ctx):
-        name = "sveinung"
-        path = f"{publicImgPath}{name}.mp4"
-        await self.sendFile(path, ctx)
+        try:
+            name = "sveinung"
+            path = f"{publicImgPath}{name}.mp4"
+            await self.sendFile(path, ctx)
+        except Exception as err:
+            print(err)
+            await ctx.channel.send('There was an error!')
 
     @commands.command(help="Clip from Jæren rundt")
     async def arne(self, ctx):
-        name = "arne"
-        path = f"{publicImgPath}{name}.mp4"
-        await self.sendFile(path, ctx)
+        try:
+            name = "arne"
+            path = f"{publicImgPath}{name}.mp4"
+            await self.sendFile(path, ctx)
+        except Exception as err:
+            print(err)
+            await ctx.channel.send('There was an error!')
 
     @commands.command(help="Clip from Jæren rundt")
     async def moped(self, ctx):
-        name = "moped"
-        path = f"{publicImgPath}{name}.mp4"
-        await self.sendFile(path, ctx)
+        try:
+            name = "moped"
+            path = f"{publicImgPath}{name}.mp4"
+            await self.sendFile(path, ctx)
+        except Exception as err:
+            print(err)
+            await ctx.channel.send('There was an error!')
     
     @commands.command(help="Clip from Rober Maddox")
     async def rocketman(self, ctx):
-        name = "rocketman"
-        path = f"{publicImgPath}{name}.mp4"
-        await self.sendFile(path, ctx)
+        try:
+            name = "rocketman"
+            path = f"{publicImgPath}{name}.mp4"
+            await self.sendFile(path, ctx)
+        except Exception as err:
+            print(err)
+            await ctx.channel.send('There was an error!')
 
 async def setup(client):
     await client.add_cog(Media(client))

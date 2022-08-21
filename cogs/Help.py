@@ -70,8 +70,11 @@ class Help(commands.Cog):
                                 description="Ay how did you come down here? please report it to"
                                             "https://github.com/Digital-Utvinning/Discord.py-example/issues\n",
                                 color=discord.Color.red())
-
-        await send_embed(ctx, emb)
+        try:
+            await send_embed(ctx, emb)
+        except Exception as err:
+            print(err)
+            await ctx.channel.send('There was an error!')
 
 async def setup(client):
     await client.add_cog(Help(client))
