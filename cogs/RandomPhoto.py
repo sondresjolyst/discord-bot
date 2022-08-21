@@ -97,5 +97,5 @@ class RandomPhoto(commands.Cog):
         except:
             await ctx.channel.send('There was an error!')
 
-def setup(client):
-    client.add_cog(RandomPhoto(client))
+async def setup(client):
+    await client.add_cog(RandomPhoto(client))

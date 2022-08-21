@@ -19,10 +19,10 @@ class Help(commands.Cog):
     def __init__(self, client):
         self.client = client
 
-    @commands.command(help="Shows all modules of that client")
+    @commands.command(help="Shows all modules of that bot")
     async def help(self, ctx, *input):
 	
-        prefix = self.client.command_prefix
+        prefix = self.bot.command_prefix
 
         if not input:
             emb = discord.Embed(title='Commands and modules', color=discord.Color.blue(),
@@ -30,13 +30,13 @@ class Help(commands.Cog):
                                             f':smiley:\n')
 
             cogs_desc = ''
-            for cog in self.client.cogs:
-                cogs_desc += f'`{cog}` {self.client.cogs[cog].__doc__}\n'
+            for cog in self.bot.cogs:
+                cogs_desc += f'`{cog}` {self.bot.cogs[cog].__doc__}\n'
 
             emb.add_field(name='Modules', value=cogs_desc, inline=False)
 
             commands_desc = ''
-            for command in self.client.walk_commands():
+            for command in self.bot.walk_commands():
                 if not command.cog_name and not command.hidden:
                     commands_desc += f'{command.name} - {command.help}\n'
 
@@ -47,12 +47,12 @@ class Help(commands.Cog):
 
         # block called when one cog-name is given
         elif len(input) == 1:
-            for cog in self.client.cogs:
+            for cog in self.bot.cogs:
                 if cog.lower() == input[0].lower():
-                    emb = discord.Embed(title=f'{cog} - Commands', description=self.client.cogs[cog].__doc__,
+                    emb = discord.Embed(title=f'{cog} - Commands', description=self.bot.cogs[cog].__doc__,
                                         color=discord.Color.green())
 
-                    for command in self.client.get_cog(cog).get_commands():
+                    for command in self.bot.get_cog(cog).get_commands():
                         if not command.hidden:
                             emb.add_field(name=f"`{prefix}{command.name}`", value=command.help, inline=False)
                     break
@@ -74,5 +74,5 @@ class Help(commands.Cog):
 
         await send_embed(ctx, emb)
 
-def setup(client):
-    client.add_cog(Help(client))
+async def setup(client):
+    await client.add_cog(Help(client))

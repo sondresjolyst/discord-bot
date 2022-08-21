@@ -59,5 +59,5 @@ class Media(commands.Cog):
         path = f"{publicImgPath}{name}.mp4"
         await self.sendFile(path, ctx)
 
-def setup(client):
-    client.add_cog(Media(client))
+async def setup(client):
+    await client.add_cog(Media(client))

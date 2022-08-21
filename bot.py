@@ -14,10 +14,18 @@ async def on_ready():
     print('We have logged in as {0.user}'.format(bot))
     await bot.change_presence(status=discord.Status.idle, activity=discord.Activity(type=discord.ActivityType.listening, name="Skjævelandsbrunå", url="https://www.google.com"))
 
-for filename in os.listdir('./cogs'):
-    if filename.endswith('.py'):
-        bot.load_extension(f'cogs.{filename[:-3]}')
-else:
-    print(f'Unable to load {filename[:-3]}')
+async def load_extensions():
+    for filename in os.listdir('./cogs'):
+        try:
+            if filename.endswith('.py'):
+                await bot.load_extension(f'cogs.{filename[:-3]}')
+                print(f'Loaded {filename[:-3]}')
+        except:
+            print(f'Unable to load {filename[:-3]}')
 
-bot.run(token)
+async def main():
+    async with bot:
+        await load_extensions()
+        await bot.start(token)
+
+asyncio.run(main())

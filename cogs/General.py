@@ -20,5 +20,5 @@ class General(commands.Cog):
     async def ping(self, ctx):
         await ctx.channel.send('Pong!')
 
-def setup(client):
-    client.add_cog(General(client))
+async def setup(client):
+    await client.add_cog(General(client))
