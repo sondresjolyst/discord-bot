@@ -1,3 +1,4 @@
+import datetime
 from discord.ext import commands
 from discord.errors import Forbidden
 
@@ -17,6 +18,15 @@ class General(commands.Cog):
 
     #         if any(word in msg_content for word in curseWord):
     #             await message.delete()
+
+    @commands.Cog.listener(name='on_command')
+    async def print(self, ctx):
+        dn = datetime.datetime.now()
+        ds = dn.strftime("%d.%m.%Y - %H:%M:%S")
+        server = ctx.guild.name
+        user = ctx.author
+        command = ctx.command
+        print(f'[{ds}] Server: {server} - User: {user} - Command: {command}')
 
     @commands.command(help="Will return Pong!")
     async def ping(self, ctx):
