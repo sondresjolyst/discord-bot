@@ -8,16 +8,16 @@ class General(commands.Cog):
     def __init__(self, client):
         self.client = client
 
-    @commands.Cog.listener()
-    async def on_message(self, message):
-        print(message.author.id)
-        if (message.author.id == 442678097393876992):
-            msg_content = message.content.lower()
+    #@commands.Cog.listener()
+    #async def on_message(self, message):
+    #    print(message.author.id)
+    #    if (message.author.id == 442678097393876992):
+    #        msg_content = message.content.lower()
 
-            curseWord = ['du fortjene kje helg']
+    #        curseWord = ['du fortjene kje helg']
 
-            if any(word in msg_content for word in curseWord):
-                await message.delete()
+    #        if any(word in msg_content for word in curseWord):
+    #            await message.delete()
 
     @commands.Cog.listener(name='on_command')
     async def print(self, ctx):
