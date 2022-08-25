@@ -14,7 +14,7 @@ class General(commands.Cog):
         if (message.author.id == 442678097393876992):
             msg_content = message.content.lower()
 
-            curseWord = ['Du fortjene kje helg']
+            curseWord = ['du fortjene kje helg']
 
             if any(word in msg_content for word in curseWord):
                 await message.delete()
