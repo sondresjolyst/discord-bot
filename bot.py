@@ -7,7 +7,7 @@ from dotenv import load_dotenv
 load_dotenv()
 token = os.getenv('token')
 
-bot = commands.Bot(command_prefix='$', help_command=None, intents=discord.Intents.all())
+bot = commands.Bot(command_prefix='/', help_command=None, intents=discord.Intents.all())
 
 @bot.event
 async def on_ready():
