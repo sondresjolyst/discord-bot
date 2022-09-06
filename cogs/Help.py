@@ -68,7 +68,7 @@ class Help(commands.Cog):
         else:
             emb = discord.Embed(title="It's a magical place.",
                                 description="Ay how did you come down here? please report it to"
-                                            "https://github.com/Digital-Utvinning/Discord.py-example/issues\n",
+                                            "https://github.com/sondresjolyst/discord-bot/issues\n",
                                 color=discord.Color.red())
         try:
             await send_embed(ctx, emb)
