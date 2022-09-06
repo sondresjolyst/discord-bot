@@ -43,7 +43,7 @@ class Help(commands.Cog):
             if commands_desc:
                 emb.add_field(name='Not belonging to a module', value=commands_desc, inline=False)
 
-            emb.add_field(name="About", value=f"Visit https://github.com/Digital-Utvinning/Discord.py-example to submit ideas or bugs.")
+            emb.add_field(name="About", value=f"Visit https://github.com/sondresjolyst/discord-bot to submit ideas or bugs.")
 
         # block called when one cog-name is given
         elif len(input) == 1:
