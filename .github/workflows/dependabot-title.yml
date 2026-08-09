@@ -8,7 +8,7 @@ permissions: {}
 
 jobs:
   rewrite:
-    if: github.actor == 'dependabot[bot]'
+    if: github.event.pull_request.user.login == 'dependabot[bot]'
     permissions:
       pull-requests: write
     uses: sondresjolyst/garge/.github/workflows/dependabot-title.yml@main
