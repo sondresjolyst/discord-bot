@@ -2,18 +2,26 @@ version: 2
 updates:
 - package-ecosystem: github-actions
   directory: /
+  groups:
+    github-actions:
+      patterns:
+      - '*'
   schedule:
     interval: weekly
     day: sunday
+    time: 03:00
+    timezone: Europe/Oslo
   cooldown:
     default-days: 7
   commit-message:
-    prefix: deps(github-actions)
+    prefix: ci(github-actions)
 - package-ecosystem: pip
   directory: /
   schedule:
     interval: weekly
     day: sunday
+    time: 03:00
+    timezone: Europe/Oslo
   cooldown:
     default-days: 7
   commit-message:
