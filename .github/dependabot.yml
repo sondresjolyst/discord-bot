@@ -9,7 +9,7 @@ updates:
   schedule:
     interval: weekly
     day: sunday
-    time: 03:00
+    time: '03:00'
     timezone: Europe/Oslo
   cooldown:
     default-days: 7
@@ -20,7 +20,7 @@ updates:
   schedule:
     interval: weekly
     day: sunday
-    time: 03:00
+    time: '03:00'
     timezone: Europe/Oslo
   cooldown:
     default-days: 7
