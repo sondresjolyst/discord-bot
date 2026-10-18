@@ -1,4 +1,4 @@
-name: 📝 Format Dependabot PR titles
+name: Format Dependabot PR titles
 
 on:
   pull_request_target:
